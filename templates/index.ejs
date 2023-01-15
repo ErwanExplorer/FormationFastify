@@ -1,5 +1,9 @@
-<%- include('./shared/header.ejs') %>
+<%- include('./shared/header.ejs'), {title: "Bienvenue sur mon blog"} %>
 <body>
+
+    <div class="container">
+        <h1>Bienvenue sur mon blog</h1>
+    </div>
 
     <ul>
         <% for (const post of posts) { %>

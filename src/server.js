@@ -1,13 +1,21 @@
 import fastifyView from '@fastify/view'
 import fastify from 'fastify'
+import fastifyStatic from '@fastify/static'
 import ejs from 'ejs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 const app = fastify()
+const rootDir = dirname(dirname(fileURLToPath(import.meta.url)))
 
 app.register(fastifyView, {
     engine: {
         ejs: ejs
     }
+})
+
+app.register(fastifyStatic, {
+    root: join(rootDir, 'public')
 })
 
 app.get('/', (req, res) => {
