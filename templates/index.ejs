@@ -1,0 +1,18 @@
+<%- include('./shared/header.ejs') %>
+<body>
+
+    <ul>
+        <% for (const post of posts) { %>
+            <li><%= post.title %></li>
+        <% } %>
+    </ul>
+
+
+    <% if (locals.title) { %>
+        <h1><%=title %></h1>
+    <% } %>
+
+<%- include('./shared/footer.ejs') %> 
+
+</body>
+</html>
